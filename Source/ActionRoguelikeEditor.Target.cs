@@ -8,7 +8,7 @@ public class ActionRoguelikeEditorTarget : TargetRules
 	public ActionRoguelikeEditorTarget(TargetInfo Target) : base(Target)
 	{
 		Type = TargetType.Editor;
-		DefaultBuildSettings = BuildSettingsVersion.V5;
+		DefaultBuildSettings = BuildSettingsVersion.V6;
 
 		ExtraModuleNames.AddRange( new string[] { "ActionRoguelike" } );
 	}
