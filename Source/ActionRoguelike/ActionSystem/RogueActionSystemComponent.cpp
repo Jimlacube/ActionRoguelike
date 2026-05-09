@@ -9,15 +9,20 @@ URogueActionSystemComponent::URogueActionSystemComponent()
 	
 }
 
+bool URogueActionSystemComponent::IsAtMaxHealth() const
+{
+	return FMath::IsNearlyEqual(Attributes.Health, Attributes.HealthMax);
+}
+
 void URogueActionSystemComponent::ApplyHealthChange(float InValueChange)
 {
 	float OldHealth = Attributes.Health;
 
-	float MaxHealth = GetDefault<URogueActionSystemComponent>()->Attributes.Health;
+	float MaxHealth = Attributes.HealthMax;
 	
 	Attributes.Health = FMath::Clamp(Attributes.Health + InValueChange, 0.0f, MaxHealth);
 	
-	if (!FMath::IsNearlyZero(OldHealth, Attributes.Health))
+	if (!FMath::IsNearlyZero(OldHealth))
 	{
 		OnHealthChanged.Broadcast(Attributes.Health, OldHealth);
 	}
