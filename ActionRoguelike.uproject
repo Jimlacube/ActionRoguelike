@@ -284,10 +284,6 @@
 			"Enabled": false
 		},
 		{
-			"Name": "GeometryMode",
-			"Enabled": false
-		},
-		{
 			"Name": "GoogleCloudMessaging",
 			"Enabled": false
 		},
