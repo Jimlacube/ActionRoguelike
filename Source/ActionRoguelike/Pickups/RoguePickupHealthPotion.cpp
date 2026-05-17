@@ -25,7 +25,7 @@ void ARoguePickupHealthPotion::OnPickupOverlapBegin(UPrimitiveComponent* Overlap
 {	
 	TObjectPtr<URogueActionSystemComponent> ActionSystemComp = OtherActor->FindComponentByClass<URogueActionSystemComponent>();
 	
-	if (ensure(ActionSystemComp != nullptr) && !ActionSystemComp->IsAtMaxHealth())
+	if (ensure(ActionSystemComp != nullptr) && !ActionSystemComp->IsAtHealthMax())
 	{
 		ActionSystemComp->ApplyHealthChange(HealingAmount);
 		

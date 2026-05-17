@@ -30,10 +30,14 @@ class ACTIONROGUELIKE_API URogueActionSystemComponent : public UActorComponent
 	GENERATED_BODY()
 	
 public:
-	bool IsAtMaxHealth() const;
+	bool IsAtHealthMax() const;
 	
 	void ApplyHealthChange(float InValueChange);
 	
+	float GetHealth() const;
+	
+	float GetHealthMax() const;
+
 	UPROPERTY(BlueprintAssignable)
 	FOnHealthChanged OnHealthChanged;
 	

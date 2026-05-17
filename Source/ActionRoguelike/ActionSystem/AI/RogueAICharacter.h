@@ -6,6 +6,8 @@
 #include "GameFramework/Character.h"
 #include "RogueAICharacter.generated.h"
 
+class URogueActionSystemComponent;
+
 UCLASS()
 class ACTIONROGUELIKE_API ARogueAICharacter : public ACharacter
 {
@@ -15,4 +17,10 @@ public:
 	// Sets default values for this character's properties
 	ARogueAICharacter();
 	
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
+	URogueActionSystemComponent* ActionSystemComponent;
+	
+protected:
+	
+	virtual float TakeDamage(float DamageAmount, struct FDamageEvent const& DamageEvent, class AController* EventInstigator, AActor* DamageCauser) override;
 };
